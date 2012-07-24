@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# hacked better script, to source origin
+# modified from http://serom.no-ip.org/index.php/Backup_du_SeRoM_Wiki
+# cc: by, sa
 
 # Out Error:
 #   1 - SSH failed
