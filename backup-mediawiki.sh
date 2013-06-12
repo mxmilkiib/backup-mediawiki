@@ -27,6 +27,7 @@ DB_PASS=`grep '^\$wgDBpassword' $WIKI_WEB_DIR/LocalSettings.php | cut -d\" -f2`
 SSH_HOST=""
 SSH_LOGIN="backup"
 SSH_DIR="/home/backup/mediawiki"
+SSH_PORT="22"
 
 
 # Ensure backup directory exists
@@ -76,8 +77,8 @@ nice -n 19 bzip2 $BKP_DIR/mediawiki-backup.tar
 
 # Send the archive on an other host
 
-if [ `ssh $SSH_LOGIN@$SSH_HOST uname` ]; then
-     scp $BKP_DIR/mediawiki-backup.tar.bz2 $SSH_LOGIN@$SSH_HOST:$SSH_DIR/
+if [ `ssh -p $SSH_PORT $SSH_LOGIN@$SSH_HOST uname` ]; then
+     scp -P $SSH_PORT $BKP_DIR/mediawiki-backup.tar.bz2 $SSH_LOGIN@$SSH_HOST:$SSH_DIR/
 else
      ERR_NUM=1
      echo "SSH connection to scp the backup failed!"
