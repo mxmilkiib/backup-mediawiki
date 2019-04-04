@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # still buggy, use with extreme caution
-# modified from http://serom.no-ip.org/index.php/Backup_du_SeRoM_Wiki
+# modified from https://serom.eu/index.php/Backup_du_SeRoM_Wiki
 # cc: by, sa
 
 # Out Error:
