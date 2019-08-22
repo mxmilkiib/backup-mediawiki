@@ -1,18 +1,38 @@
 #!/bin/bash
 
-# still buggy, use with extreme caution
-# modified from https://serom.eu/index.php/Backup_du_SeRoM_Wiki
-# cc: by, sa
+### backup-mediawiki.sh
+#   Modified from https://serom.eu/index.php/Backup_du_SeRoM_Wiki
+#   Also bits from https://wiki.mageia.org/en/Notes_on_moving_a_mediawiki#Appendix-1:_mk_wiki_backup_script
 
-# Out Error:
+# Usage
+#   Create a backup-mediawiki user and make it run the script via cron
+#   Essential data is extracted to xzipped tar files which can be copied to another computer
+
+# Caution
+#   Backup wiki content contains security sensitive data. Protect by restricting access.
+
+# References
+#   https://sharkysoft.com/wiki/how_to_move_a_MediaWiki_wiki_from_one_server_to_another
+#   https://www.mediawiki.org/wiki/Manual:Moving_a_wiki
+#   https://lists.wikimedia.org/pipermail/mediawiki-l/2008-August/028294.html
+#   https://www.mediawiki.org/wiki/Manual:Backing_up_a_wiki/Duesentrieb%27s_backup_script
+#   https://www.mediawiki.org/wiki/Manual:DumpBackup.php
+#   
+
+# Exit error codes
 #   1 - SSH failed
 #   2 - Nothing to backup! $WIKI_WEB_DIR does not exist.
 #   3 - MySQL Dump failed
 
 
+#todo: incorporate more ideas from above variations of the backup script
+#todo: output?
+
+
+# Script output will be redirected and discarded
 exec > /dev/null
 
-# Definition of Variables
+# Definition of variables
 ERR_NUM=0
 BKP_DIR="/home/backupwiki/mediawiki"
 WIKI_WEB_DIR="/var/www/wiki.thingsandstuff.org"
