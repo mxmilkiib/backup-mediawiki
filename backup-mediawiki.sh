@@ -18,6 +18,7 @@
 #   https://www.mediawiki.org/wiki/Manual:Backing_up_a_wiki/Duesentrieb%27s_backup_script
 #   https://www.mediawiki.org/wiki/Manual:DumpBackup.php
 #   https://github.com/WikiTeam/wikiteam
+#   https://www.mediawiki.org/wiki/Manual:Internet_Archive
 
 # Exit error codes
 #   1 - SSH failed
